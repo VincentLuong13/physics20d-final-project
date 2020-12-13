@@ -58,7 +58,7 @@
               </div>
 
               <div class="wrap-input100 rs3 validate-input" data-validate="Planet Gravitational Constant is required">
-                <input id = "planet-gravity" class="input100" type="number" min="0.000000001" name="radius">
+                <input id = "planet-gravity" class="input100" type="number" min="0.000000001" name="gravity">
                 <span class="label-input100">Gravitational Constant</span>
               </div>
 
@@ -110,6 +110,8 @@
                 }
             })    
         })
+      $("#planet-gravity").addClass('has-val');
+      $("#planet-gravity").val(.000000000066726);
       $("#planet-radius").change(function(){
         let ratio = $("#planet-radius").val() * 40
         if (ratio > window.innerWidth / 3) {
@@ -127,7 +129,7 @@
         if(mass && radius && gravity && mass > 0 && radius >0 && gravity > 0){
           let v = (2 * gravity * mass) / radius
           let escape = Math.sqrt(v)
-          $("#solution").html(escape)
+          $("#solution").html(escape + " m/s")
           $("#myModal").modal()
         }
         else{
