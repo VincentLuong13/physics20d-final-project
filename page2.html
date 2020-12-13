@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
+    <title>Universal Gravitation Calculator</title> 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="title" content="Escape Velocity Calculator">
-    <meta name="description" content="Escape Velocity Calculator">
+    <meta name="title" content="Universal Gravitation Calculator">
+    <meta name="description" content="Universal Gravitation Calculator">
     <meta name="author" content="Vincent Luong, Javid Singh">
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/cover/">
@@ -13,8 +14,11 @@
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="./page2.css">>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="./page2.js"></script>
+    <link rel="stylesheet" href="./page2.css">
     <meta name="theme-color" content="#7952b3">
 
 
@@ -45,12 +49,22 @@
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="mb-auto">
         <div>
-          <h3 class="float-md-start mb-0">Universal Gravitation Calculator</h3>
           <nav class="nav nav-masthead justify-content-center float-md-end">
             <a class="nav-link" href="./page1.html">Escape Velocity Calculator</a>
           </nav>
         </div>
       </header>
+
+      <div class= "earth-container">
+        <div class="left-earth">
+          <div class="m-auto earth"></div>
+        </div>
+        <div class="earth-divider"></div>
+        <div class="right-earth">
+          <div class="m-auto earth"></div>
+        </div>
+
+      </div>
 
       <main class="px-3">
         <h1>Newton's Law of Universal Gravitation</h1>
@@ -62,18 +76,18 @@
               
               <div class="wrap-input100 rs1 validate-input" data-validate = "Mass 1 is required">
                 <input class="input100" type="number" min="0.000000001" name="mass1">
-                <span class="label-input100">Mass 1</span>
+                <span class="label-input100">Mass 1 (kg)</span>
               </div>
               
               
               <div class="wrap-input100 rs2 validate-input" data-validate="Mass 2 is required">
                 <input class="input100" type="number" min="0.000000001" name="mass2">
-                <span class="label-input100">Mass 2</span>
+                <span class="label-input100">Mass 2 (kg)</span>
               </div>
               
               <div class="wrap-input100 rs3 validate-input" data-validate="Distance is required">
                 <input class="input100" type="number" min="0.000000001" name="distance">
-                <span class="label-input100">Distance</span>
+                <span class="label-input100">Distance (m)</span>
               </div>
 
               <div class="container-login100-form-btn">
@@ -91,5 +105,23 @@
 
     </div>
     
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+      
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-body">
+            <h2 class = "modal-text">Force (N):</h2>
+            <h2 class = "modal-text" id = "solution"></h2>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
   </body>
 </html>
