@@ -14,8 +14,14 @@
 }
 
 .nav-link {
-    color: #fff
+    color: #fff;
+    border-style: solid;
+    border-radius: 10px;
+    border-width: 1px;
+    opacity: 0.6;
+    transition: 0.3s;
 }
+.nav-link:hover {opacity: 1}
 
 .earth {
     width:200px;
@@ -33,6 +39,11 @@
     -webkit-animation:rotationEarth 5s infinite linear;
     -moz-animation:rotationEarth 5s infinite linear;
     animation:rotationEarth 5s infinite linear;
+    transition: all 4s ease;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 @-webkit-keyframes rotationEarth {
@@ -134,9 +145,6 @@
 	-webkit-animation-iteration-count: infinite;
 }
 
-.wrap-input100 {
-    width: 50%;
-}
-.wrap-input100.rs2 {
-    border-top-right-radius: 12px;
+.modal-text{
+    color: black;
 }
